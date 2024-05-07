@@ -3,12 +3,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationEnum} from '../../lib/enums/NavigationEnum';
 import MathScreen from '../../screens/Math/MathScreen';
 import {StyleSheet} from 'react-native';
+import StartScreen from '../../screens/Start/StartScreen';
 
 const Stack = createNativeStackNavigator();
 
 const MainStack: React.FC = () => {
   return (
-    <Stack.Navigator initialRouteName={NavigationEnum.Math}>
+    <Stack.Navigator initialRouteName={NavigationEnum.Start}>
+      <Stack.Screen name={NavigationEnum.Start} component={StartScreen} />
       <Stack.Screen
         name={NavigationEnum.Math}
         component={MathScreen}
